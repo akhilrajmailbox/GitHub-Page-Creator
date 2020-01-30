@@ -43,13 +43,18 @@ function page() {
             echo -e "${DEST_FILE_NAME} already present...! \n task aborting...!"
             exit 1
         else
-            local CSS_VALUE=$(cat /opt/reference-index | head -1)
+            local CSS_VALUE=$(sed -n 1p /opt/reference-index)
+            local REPO_ST=$(sed -n 2p /opt/reference-index)
+            local REPO_URL=`echo "${READMEFILE}" | cut -d"/" -f1-5 | sed "s|raw.githubusercontent.com|github.com|g"`
+            local REPO_VALUE=`echo "${REPO_ST}" | sed "s|REPO_URL|${REPO_URL}|g"`
             echo -e "\n Env Values :\n"
             echo HTML_FILE_NAME=${HTML_FILE_NAME}
             echo DEST_FILE_NAME=${DEST_FILE_NAME}
             echo CSS_VALUE=${CSS_VALUE}
+            echo REPO_VALUE=${REPO_VALUE}
             node generateReadMe.js
-            echo ${CSS_VALUE} >> ${DEST_FILE_NAME}
+            echo "sed -i '/<\/h1>/i ${CSS_VALUE}' ${DEST_FILE_NAME}" | bash
+            echo "sed -i '/<\/h1>/a ${REPO_VALUE}' ${DEST_FILE_NAME}" | bash
             ls ${DEST_FILE_NAME}
         fi
         cd ${P_W_D}

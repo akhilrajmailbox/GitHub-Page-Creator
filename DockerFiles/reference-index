@@ -1,1 +1,2 @@
 <link type="text/css" rel="stylesheet" media="screen" href="./default.css" id="default-css" />
+<p id="repository-visit">Do you want to visit the <a href="REPO_URL">Repository</a> ?</p>

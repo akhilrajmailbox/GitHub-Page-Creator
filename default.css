@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-  background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(191, 255, 189));
+  background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(199, 255, 213));
   background-color: #e2e0e0;
   color:        #282828;
   font-family:  'Roboto', sans-serif;
@@ -30,6 +30,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  background-image: linear-gradient(to bottom, rgb(215, 224, 219), rgb(191, 255, 189));
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+  font-weight: bold;
   font-size:    34px;
   line-height:  34px;
 }
@@ -68,6 +74,12 @@ p strong {
   font-weight: bold;
 }
 
+#repository-visit {
+  background-image: linear-gradient(to right, rgb(215, 224, 219), rgb(191, 255, 189));
+  color: black;
+  text-align: right;
+  font-weight: bold;
+}
 
 pre {
   background: #303030;
