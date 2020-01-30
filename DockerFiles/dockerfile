@@ -1,0 +1,11 @@
+FROM node:10-alpine3.9
+MAINTAINER Akhil Raj <akhilrajmailbox@gmail.com>
+RUN apk --no-cache add ca-certificates bash libc6-compat wget
+WORKDIR /opt/
+RUN npm install --save-dev marked
+ADD reference-index generateReadMe.js entrypoint.sh /opt/
+RUN chmod a+x /opt/entrypoint.sh
+ENV READMEFILE ""
+ENV HTML_FILE_NAME ""
+ENV DEST_FILE_NAME ""
+ENTRYPOINT ["/opt/entrypoint.sh"]
