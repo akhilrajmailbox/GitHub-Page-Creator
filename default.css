@@ -70,8 +70,18 @@ p strong {
   line-height: 20px;
   font-size:    16px;
   font-family:  'Roboto', sans-serif;
-  color: #fc0000;
+  color: #791919;
   font-weight: bold;
+  font-style: oblique;
+}
+
+p a, li a {
+  line-height: 20px;
+  font-size:    16px;
+  font-family:  'Roboto', sans-serif;
+  color: #003cff;
+  font-weight: bold;
+  font-style: italic;
 }
 
 #repository-visit {
@@ -90,6 +100,7 @@ pre {
   -moz-box-shadow: inset 0 0 10px #000;
   box-shadow: inset 0 0 10px #000;
   counter-reset: line;
+  background-image: linear-gradient(to bottom left, rgb(128, 112, 112), rgb(0, 0, 0));
   white-space: pre-wrap;
 	word-wrap: break-word;
 }
@@ -106,4 +117,29 @@ pre span:before {
   padding: 0 .5em;
   margin-right: .5em;
   color: #888
+}
+
+
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: rgb(168, 168, 168);}
+
+table tr:hover {background-color: rgb(185, 185, 185);}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(126, 121, 121);
+  /* background-image: linear-gradient(to bottom, rgb(215, 224, 219), rgb(57, 99, 55)); */
+  color: white;
 }
